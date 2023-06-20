@@ -1,0 +1,21 @@
+
+# API Medicamentos
+
+Essa API tem o principal objetivo de leitura e cadastro de medicamentos sendo de uso exclusivo de profissionais da saúde.
+
+Para a realização desse sistema utilizamos da técnica TDD (Test-driven development), para realizarmos testes nas funcionalidades de login, e funcionalidades de criação, leitura, atualização e para deletar medicamentos.
+
+
+
+
+Créditos:
+
+ALEX CARNEIRO MARTINS - RA: 125111370659
+
+FILIPE MAGALHÃES MOREIRA - RA: 125111359015
+
+GABRIEL LISTA BERTONHA - RA: 125111378383
+
+VINICIUS DOS SANTOS SOUZA - RA: 125111364575
+
+LUIGI GUILHERME R. DA SILVA - RA: 125111365839
