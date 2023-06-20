@@ -3,7 +3,7 @@
 
 Essa API tem o principal objetivo de leitura e cadastro de medicamentos sendo de uso exclusivo de profissionais da saúde.
 
-Para a realização desse sistema utilizamos da técnica TDD (Test-driven development), para realizarmos testes nas funcionalidades de login, e funcionalidades de criação, leitura, atualização e para deletar medicamentos
+Para a realização desse sistema utilizamos da técnica TDD (Test-driven development), para realizarmos testes nas funcionalidades de login, e funcionalidades de criação, leitura, atualização e para deletar medicamentos.
 
 
 
