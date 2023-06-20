@@ -97,5 +97,20 @@ namespace ProjetoBulaFinal.Testes
             Assert.That(okResult.Value, Is.EqualTo(medicamento));
             _servicoMock.Verify(s => s.AtualizarAsync(It.IsAny<Medicamento>()), Times.Once);
         }
+
+        [Test]
+        public async Task Update_WithMismatchingId_ReturnsBadRequestResult()
+        {
+            // Arrange
+            var medicamento = new Medicamento { Id = 1, Nome = "Medicamento 1" };
+
+            // Act
+            var result = await _controller.Update(2, medicamento);
+
+            // Assert
+            Assert.That(result, Is.TypeOf<StatusCodeResult>());
+            var statusCodeResult = (StatusCodeResult)result;
+            Assert.That(statusCodeResult.StatusCode, Is.EqualTo(400));
+        }
     }
 }
