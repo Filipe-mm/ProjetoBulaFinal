@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
+using ProjetoBulaFinal.Controllers;
 using ProjetoBulaFinal.DTOs;
 using ProjetoBulaFinal.Models;
 using ProjetoBulaFinal.Repositorio.Interfaces;
