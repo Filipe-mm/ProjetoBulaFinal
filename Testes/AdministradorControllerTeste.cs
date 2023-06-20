@@ -34,5 +34,21 @@ namespace ProjetoBulaFinal.Testes
             var statusCodeResult = (StatusCodeResult)result;
             Assert.That(statusCodeResult.StatusCode, Is.EqualTo(400));
         }
+
+        [Test]
+        public async Task Login_WithInvalidEmailOrSenha_ReturnsNotFoundResult()
+        {
+            // Arrange
+            var administradorDTO = new AdministradorDTO { Email = "admin@example.com", Senha = "password" };
+            _servicoMock.Setup(s => s.Login(administradorDTO.Email, administradorDTO.Senha)).ReturnsAsync((Administrador)null);
+
+            // Act
+            var result = await _controller.Login(administradorDTO);
+
+            // Assert
+            Assert.That(result, Is.TypeOf<StatusCodeResult>());
+            var statusCodeResult = (StatusCodeResult)result;
+            Assert.That(statusCodeResult.StatusCode, Is.EqualTo(404));
+        }
     }
 }
