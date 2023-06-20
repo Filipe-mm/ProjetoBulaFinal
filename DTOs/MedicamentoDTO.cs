@@ -1,6 +1,6 @@
 ﻿namespace ProjetoBulaFinal.DTOs
 {
-    public class MedicamentoDTO
+    public record MedicamentoDTO
     {
         public string Marca { get; set; } = default!;
         public string Nome { get; set; } = default!;

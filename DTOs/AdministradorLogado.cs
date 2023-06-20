@@ -1,6 +1,6 @@
 ﻿namespace ProjetoBulaFinal.DTOs
 {
-    public class AdministradorLogado
+    public record AdministradorLogado
     {
         public int Id { get; set; } = default!;
         public string Nome { get; set; } = default!;
