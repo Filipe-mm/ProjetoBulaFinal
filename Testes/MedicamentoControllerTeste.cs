@@ -39,5 +39,26 @@ namespace ProjetoBulaFinal.Testes
             Assert.That(okResult.StatusCode, Is.EqualTo(200));
             Assert.That(okResult.Value, Is.EqualTo(medicamentos));
         }
+
+        [Test]
+        public async Task Details_WithValidId_ReturnsOkResultWithMedicamento()
+        {
+            // Arrange
+            var medicamentos = new List<Medicamento>
+            {
+                new Medicamento { Id = 1, Nome = "Medicamento 1" },
+                new Medicamento { Id = 2, Nome = "Medicamento 2" }
+            };
+            _servicoMock.Setup(s => s.TodosAsync()).ReturnsAsync(medicamentos);
+
+            // Act
+            var result = await _controller.Details(2);
+
+            // Assert
+            Assert.That(result, Is.TypeOf<OkObjectResult>());
+            var okResult = (OkObjectResult)result;
+            Assert.That(okResult.StatusCode, Is.EqualTo(200));
+            Assert.That(okResult.Value, Is.EqualTo(medicamentos[1]));
+        }
     }
 }
