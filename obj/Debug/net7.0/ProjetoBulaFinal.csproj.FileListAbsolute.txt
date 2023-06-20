@@ -1,0 +1,7 @@
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.csproj.AssemblyReference.cache
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.AssemblyInfoInputs.cache
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.AssemblyInfo.cs
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.csproj.CoreCompileInputs.cache
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\filip\OneDrive\Área de Trabalho\ProjetoBulaFinal\obj\Debug\net7.0\ProjetoBulaFinal.MvcApplicationPartsAssemblyInfo.cache
