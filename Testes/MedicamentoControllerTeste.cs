@@ -112,5 +112,23 @@ namespace ProjetoBulaFinal.Testes
             var statusCodeResult = (StatusCodeResult)result;
             Assert.That(statusCodeResult.StatusCode, Is.EqualTo(400));
         }
+
+        [Test]
+        public async Task Delete_WithExistingId_ReturnsNoContentResult()
+        {
+            // Arrange
+            var medicamento = new Medicamento { Id = 1, Nome = "Medicamento 1" };
+            _servicoMock.Setup(s => s.TodosAsync()).ReturnsAsync(new List<Medicamento> { medicamento });
+            _servicoMock.Setup(s => s.ApagarAsync(It.IsAny<Medicamento>())).Returns(Task.CompletedTask);
+
+            // Act
+            var result = await _controller.Delete(1);
+
+            // Assert
+            Assert.That(result, Is.TypeOf<StatusCodeResult>());
+            var statusCodeResult = (StatusCodeResult)result;
+            Assert.That(statusCodeResult.StatusCode, Is.EqualTo(204));
+            _servicoMock.Verify(s => s.ApagarAsync(It.IsAny<Medicamento>()), Times.Once);
+        }
     }
 }
