@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
+using ProjetoBulaFinal.DTOs;
 using ProjetoBulaFinal.Models;
 using ProjetoBulaFinal.Repositorio.Interfaces;
 
@@ -59,6 +60,24 @@ namespace ProjetoBulaFinal.Testes
             var okResult = (OkObjectResult)result;
             Assert.That(okResult.StatusCode, Is.EqualTo(200));
             Assert.That(okResult.Value, Is.EqualTo(medicamentos[1]));
+        }
+
+        [Test]
+        public async Task Create_WithValidMedicamentoDTO_ReturnsCreatedResultWithMedicamento()
+        {
+            // Arrange
+            var medicamentoDTO = new MedicamentoDTO { Nome = "Medicamento 1" };
+            var medicamento = new Medicamento { Id = 1, Nome = "Medicamento 1" };
+            _servicoMock.Setup(s => s.IncluirAsync(It.IsAny<Medicamento>())).Returns(Task.CompletedTask);
+
+            // Act
+            var result = await _controller.Create(medicamentoDTO);
+
+            // Assert
+            Assert.That(result, Is.TypeOf<StatusCodeResult>());
+            var statusCodeResult = (StatusCodeResult)result;
+            Assert.That(statusCodeResult.StatusCode, Is.EqualTo(201));
+            _servicoMock.Verify(s => s.IncluirAsync(It.IsAny<Medicamento>()), Times.Once);
         }
     }
 }
